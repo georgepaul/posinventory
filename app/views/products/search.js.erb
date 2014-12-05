@@ -1,0 +1,6 @@
+//$("#products").html("j");
+$("#products").html("<%= escape_javascript(render partial: 'products', collection: @products ) %>");
+$("#paginate").html("<%= escape_javascript(render partial: 'paginate', :object => @products) %>");
+$("#products").fadeTo( "slow" , 1);
+$(".filter_wrapper").fadeTo("slow", 1);
+

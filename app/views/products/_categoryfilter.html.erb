@@ -1,0 +1,6 @@
+<select id="category">
+<option value="all">All</option>
+<% @categories.each do |m| %>
+<option value="<%= m %>"><%= m %></option>
+<%end%>
+</select>

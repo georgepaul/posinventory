@@ -1,0 +1,73 @@
+class CreateProducts < ActiveRecord::Migration
+  def change
+    create_table :products do |t|
+    t.string :handle
+    t.string :title
+    t.string :body_html
+    t.string :vendor
+    t.string :manufacturer
+    t.string :type
+    t.string :sub_type
+    t.string :category_3
+    t.string :tags
+    t.string :published
+    t.string :option1_name
+    t.string :option1_value
+    t.string :option2_name
+    t.string :option2_value
+	t.string :option3_name
+    t.string :option3_value
+    t.string :variant_sku
+    t.string :variant_grams
+    t.string :variant_inventory_tracker
+    t.string :variant_inventory_quantity
+    t.string :variant_inventory_policy
+    t.string :variant_fulfullment_service
+    t.string :variant_price
+    t.string :variant_compare_at_price
+    t.integer :variant_requires_shipping
+    t.integer :variant_tax
+    t.integer :variant_barcode
+    t.string :image_src
+    t.string :thumbnail
+    t.string  :image_2
+    t.string :image_3
+    t.string :image_4
+    t.string :image_alt_text
+    t.string :collection
+    t.string :length
+    t.string :insertable
+    t.string :width
+    t.string :inner_diameter
+    t.integer :quantity 
+    t.string :brand
+    t.string :related_items
+    t.string :alternate_product
+    t.string :prohibited
+    t.string :color
+    t.string :material
+    t.string :shape
+    t.string :feature
+    t.string :function
+    t.string :powered_by
+    t.string :batteries_required
+    t.string :pornstar
+    t.string :doctor_name
+    t.string :fragrance
+    t.string :flavor
+    t.string :clothing_size
+    t.string :bra_size
+    t.string :shoe_size
+    t.string :heel_size
+    t.string :texture
+    t.string :genre
+    t.string :studio
+    t.string :dvd_feature
+    t.string :director
+    t.string :dvd_genres
+    t.string :other
+    t.string :cast
+	t.timestamps
+    end
+  end
+end

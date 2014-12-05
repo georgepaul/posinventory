@@ -1,0 +1,19 @@
+<select class="manufacturer">
+<option>All</option>
+<% @manufacturers.each do |m| %>
+<option value="<%= m %>"><%= m %></option>
+<%end%>
+</select>
+
+
+<select class="category">
+<% @categories.each do |m| %>
+<option value="<%= m %>"><%= m %></option>
+<%end%>
+</select>
+
+<select class="subcategory">
+<% @sub_categories.each do |m| %>
+<option value="<%= m %>"><%= m %></option>
+<%end%>
+</select>

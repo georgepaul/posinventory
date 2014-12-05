@@ -1,0 +1,18 @@
+<% @products.each do |product| %>
+<div class="image_wrapper">
+<%= image_tag product.image_src , :class => "main_images" %>
+
+<div class="image_info">
+<span class="title"><%= truncate(product.title, length: 18) %></span>
+<span class="store">In Store: <%= rand(5..120) %></span>
+<span class="inventory">Inventory: <%= rand(5..1130) %></span>
+</div>
+
+	<div style="" class="button_wrapper">
+    <a style="" class="button tiny" href="#">Update Shopify</a>
+    <a style="" class="button tiny" href="#">Add To Cart</a>
+    <a style="" class="button tiny pos" data-product-id = "<%= product.id %>" href="#">POS Info</a>
+  	</div>
+
+</div>
+<% end %>

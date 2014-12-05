@@ -1,0 +1,10 @@
+console.log("HIT");
+$("#products").html("<%= escape_javascript(render partial: 'products', collection: @products ) %>");
+$("#paginate").html("<%= escape_javascript(render partial: 'paginate', :object => @products) %>");
+$("#category_filter").html("<%= escape_javascript(render partial: 'categoryfilter', :object => @categories) %>");
+$("#subcategory_filter").html("<%= escape_javascript(render partial: 'subcategoryfilter', :object => @sub_categories) %>");
+$("select").select2();
+
+
+$("#products").fadeTo( "slow" , 1);
+$(".filter_wrapper").fadeTo("slow", 1);
