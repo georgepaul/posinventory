@@ -1,14 +1,14 @@
 class Product < ActiveRecord::Base
 
 	has_one :inventory
-
 	attr_accessor :images
 
+ searchable do
+    text :search
+    text :category_3
+    end
 
 
-def self.search(search)
-   where("title like ?", "%#{search}%").order(:title).limit(10)
-end
 
 def self.update_images
 =begin
@@ -21,6 +21,9 @@ def self.update_images
 	end
 =end
 end
+
+
+
 
 
 

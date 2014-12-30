@@ -1,0 +1,62 @@
+# Logfile created on 2014-12-22 15:39:30 -0500 by logger.rb/44203
+I, [2014-12-22T15:39:30.015114 #14462]  INFO -- : Net::HTTP::Get: /catalog/product_info.php?products_id=16793
+D, [2014-12-22T15:39:30.015368 #14462] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-12-22T15:39:30.015453 #14462] DEBUG -- : request-header: accept => */*
+D, [2014-12-22T15:39:30.015526 #14462] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4b) Gecko/20030516 Mozilla Firebird/0.6
+D, [2014-12-22T15:39:30.015610 #14462] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-12-22T15:39:30.015681 #14462] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-12-22T15:39:30.015748 #14462] DEBUG -- : request-header: host => www.jdswholesales.com
+I, [2014-12-22T15:39:31.516893 #14462]  INFO -- : status: Net::HTTPClientError 1.1 420 No osc cookie
+D, [2014-12-22T15:39:31.517103 #14462] DEBUG -- : response-header: date => Mon, 22 Dec 2014 20:39:31 GMT
+D, [2014-12-22T15:39:31.517186 #14462] DEBUG -- : response-header: server => Apache
+D, [2014-12-22T15:39:31.517265 #14462] DEBUG -- : response-header: x-powered-by => PHP/5.2.17
+D, [2014-12-22T15:39:31.517341 #14462] DEBUG -- : response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+D, [2014-12-22T15:39:31.517415 #14462] DEBUG -- : response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+D, [2014-12-22T15:39:31.517538 #14462] DEBUG -- : response-header: pragma => no-cache
+D, [2014-12-22T15:39:31.517611 #14462] DEBUG -- : response-header: content-encoding => gzip
+D, [2014-12-22T15:39:31.517681 #14462] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2014-12-22T15:39:31.517751 #14462] DEBUG -- : response-header: set-cookie => 46984d3d4ddd0da9376835429fedd5c7=7dc415c9d3166512282415205a41185a; expires=Fri, 15-Apr-1983 18:52:52 GMT; path=/; domain=.www.jdswholesales.com, osCsid=cc31ab058ffd8f741982fbf0f3be75af; path=/catalog/; domain=www.jdswholesales.com
+D, [2014-12-22T15:39:31.517820 #14462] DEBUG -- : response-header: location => http://www.jdswholesales.com/catalog/product_info.php
+D, [2014-12-22T15:39:31.517908 #14462] DEBUG -- : response-header: connection => close
+D, [2014-12-22T15:39:31.517976 #14462] DEBUG -- : response-header: transfer-encoding => chunked
+D, [2014-12-22T15:39:31.518043 #14462] DEBUG -- : response-header: content-type => text/html
+D, [2014-12-22T15:39:31.518356 #14462] DEBUG -- : Read 756 bytes (756 total)
+D, [2014-12-22T15:39:31.518538 #14462] DEBUG -- : Read 2896 bytes (3652 total)
+D, [2014-12-22T15:39:31.521187 #14462] DEBUG -- : Read 1448 bytes (5100 total)
+D, [2014-12-22T15:39:31.522467 #14462] DEBUG -- : Read 1448 bytes (6548 total)
+D, [2014-12-22T15:39:31.522668 #14462] DEBUG -- : Read 1448 bytes (7996 total)
+D, [2014-12-22T15:39:31.522777 #14462] DEBUG -- : Read 677 bytes (8673 total)
+D, [2014-12-22T15:39:31.523138 #14462] DEBUG -- : gzip response
+D, [2014-12-22T15:39:31.578624 #14462] DEBUG -- : saved cookie: 46984d3d4ddd0da9376835429fedd5c7=7dc415c9d3166512282415205a41185a
+D, [2014-12-22T15:39:31.579239 #14462] DEBUG -- : saved cookie: osCsid=cc31ab058ffd8f741982fbf0f3be75af
+I, [2014-12-22T15:41:02.478209 #14462]  INFO -- : Net::HTTP::Get: /catalog/product_info.php?products_id=16793
+D, [2014-12-22T15:41:02.478363 #14462] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-12-22T15:41:02.478442 #14462] DEBUG -- : request-header: accept => */*
+D, [2014-12-22T15:41:02.478512 #14462] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4b) Gecko/20030516 Mozilla Firebird/0.6
+D, [2014-12-22T15:41:02.478586 #14462] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-12-22T15:41:02.478663 #14462] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-12-22T15:41:02.478743 #14462] DEBUG -- : request-header: host => www.jdswholesales.com
+I, [2014-12-22T15:41:03.060282 #14462]  INFO -- : status: Net::HTTPClientError 1.1 420 No osc cookie
+D, [2014-12-22T15:41:03.060462 #14462] DEBUG -- : response-header: date => Mon, 22 Dec 2014 20:41:03 GMT
+D, [2014-12-22T15:41:03.060537 #14462] DEBUG -- : response-header: server => Apache
+D, [2014-12-22T15:41:03.060603 #14462] DEBUG -- : response-header: x-powered-by => PHP/5.2.17
+D, [2014-12-22T15:41:03.060674 #14462] DEBUG -- : response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+D, [2014-12-22T15:41:03.060739 #14462] DEBUG -- : response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+D, [2014-12-22T15:41:03.060874 #14462] DEBUG -- : response-header: pragma => no-cache
+D, [2014-12-22T15:41:03.060940 #14462] DEBUG -- : response-header: content-encoding => gzip
+D, [2014-12-22T15:41:03.061007 #14462] DEBUG -- : response-header: vary => Accept-Encoding
+D, [2014-12-22T15:41:03.061078 #14462] DEBUG -- : response-header: set-cookie => 3caf1d175b66fb6477eaf603c8d8c508=9e9f282898de67f406db1a6c9aac551b; expires=Fri, 15-Apr-1983 18:54:24 GMT; path=/; domain=.www.jdswholesales.com, osCsid=5cddfd837e27dc6abe777f4605eaafa6; path=/catalog/; domain=www.jdswholesales.com
+D, [2014-12-22T15:41:03.061195 #14462] DEBUG -- : response-header: location => http://www.jdswholesales.com/catalog/product_info.php
+D, [2014-12-22T15:41:03.061266 #14462] DEBUG -- : response-header: connection => close
+D, [2014-12-22T15:41:03.061329 #14462] DEBUG -- : response-header: transfer-encoding => chunked
+D, [2014-12-22T15:41:03.061395 #14462] DEBUG -- : response-header: content-type => text/html
+D, [2014-12-22T15:41:03.061609 #14462] DEBUG -- : Read 756 bytes (756 total)
+D, [2014-12-22T15:41:03.061733 #14462] DEBUG -- : Read 1448 bytes (2204 total)
+D, [2014-12-22T15:41:03.063212 #14462] DEBUG -- : Read 1448 bytes (3652 total)
+D, [2014-12-22T15:41:03.064146 #14462] DEBUG -- : Read 1448 bytes (5100 total)
+D, [2014-12-22T15:41:03.064613 #14462] DEBUG -- : Read 1448 bytes (6548 total)
+D, [2014-12-22T15:41:03.065895 #14462] DEBUG -- : Read 1448 bytes (7996 total)
+D, [2014-12-22T15:41:03.066007 #14462] DEBUG -- : Read 657 bytes (8653 total)
+D, [2014-12-22T15:41:03.066348 #14462] DEBUG -- : gzip response
+D, [2014-12-22T15:41:03.082624 #14462] DEBUG -- : saved cookie: 3caf1d175b66fb6477eaf603c8d8c508=9e9f282898de67f406db1a6c9aac551b
+D, [2014-12-22T15:41:03.083221 #14462] DEBUG -- : saved cookie: osCsid=5cddfd837e27dc6abe777f4605eaafa6

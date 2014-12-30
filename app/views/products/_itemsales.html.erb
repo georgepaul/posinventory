@@ -1,0 +1,42 @@
+<h2> Item Sales History </h2>
+<table> 
+	<thead> 
+	<tr> 
+
+		<th width="200">Sale Time</th> 
+		<th width="200">Comment</th> 
+		<th width="200">Payment Type</th> 
+
+		<th width="200">Customer Id</th> 
+		<th>Employee Id</th> 
+		<th width="150">Sale Id</th> 
+		<th width="150">CC Ref #</th> 
+
+		<th width="150">Suspended</th> 
+		<th width="150">Deleted</th> 
+		
+</tr> 
+</thead> 
+<tbody> 
+<% @sales.each do |sale| %>
+<tr class="load_items" data-sale-id="<%= sale.sale_id %>" href="/saleitems"> 
+
+<td><%= sale.sale_time.strftime("%B %d at %I:%M %p %Y") %></td>
+<td><%= sale.comment %></td>
+<td><%= sale.payment_type %></td>
+<td><%= sale.customer_id %></td>
+<td><%= sale.employee_id %></td>
+<td><%= sale.sale_id %></td>
+<td><%= sale.cc_ref_no %></td>
+<td><%= sale.suspended %></td>
+<td><%= sale.deleted %></td>
+</tr>
+<% end %>
+</tbody> 
+</table>
+
+
+
+<div id="saleitems">
+
+</div>

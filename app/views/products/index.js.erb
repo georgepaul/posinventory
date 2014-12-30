@@ -1,1 +1,10 @@
-console.log("dd");
+$("#manufacturer_filter").show();
+$("#subcategory_filter").show();
+$("#category_filter").show();
+$("#location_filter").hide();
+$("#poscategory_filter").hide();
+$("#products").html("<%= escape_javascript(render partial: 'products', :object => @products ) %>");
+$(".positemsonly").removeClass("selected");
+$(".ordering").addClass("selected");
+$(".outofstock").removeClass("selected");
+loading(false);

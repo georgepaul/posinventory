@@ -15,7 +15,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'will_paginate'
 gem 'progress_bar'
-
+gem 'nokogiri'
+gem 'curb'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'sunspot_rails'
@@ -29,10 +30,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem "google_custom_search_api"
 gem 'google-api-client'
 gem 'google-search'
+gem 'mechanize'
 gem 'httparty'
 gem 'json'
 gem 'image_suckr'
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.3.1'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 # Use ActiveModel has_secure_password

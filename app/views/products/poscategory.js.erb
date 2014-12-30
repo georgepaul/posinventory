@@ -1,0 +1,9 @@
+$("#products").html("<%= escape_javascript(render partial: 'posproducts', :object => @products ) %>");
+$("#paginate").html("<%= escape_javascript(render partial: 'paginate', :object => @products) %>");
+$("select").select2();
+
+$("#products").fadeTo( "slow" , 1);
+$(".filter_wrapper").fadeTo("slow", 1);
+loading(false);
+
+$("#orderby").attr("href", "/<%= params[:action] %>/?poscategory=<%=params[:poscategory]%>&poslocation=<%=params[:poslocation]%>");

@@ -1,0 +1,6 @@
+<select id="poscategory">
+<option value="all">POS Category</option>
+<% @pos_categories.each do |m| %>
+<option value="<%= m %>"><%= m %></option>
+<%end%>
+</select>

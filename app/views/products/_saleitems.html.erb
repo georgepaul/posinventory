@@ -1,0 +1,49 @@
+
+<h4>Sale #<%= @sale.sale_id %></h4>
+<h6>Other Items Sold</h6>
+
+<table> 
+<thead> 
+<tr> 
+		<th width="200">[IMG]</th> 
+		<th width="200">Name</th> 
+		
+		<th width="200">Category</th> 
+		<th width="200">Supplier Id</th> 
+		<th width="200">Item Number</th> 
+		
+		<th>Cost Price</th> 
+		<th width="150">Unit Price</th> 
+		<th width="150">Promo Price</th> 
+
+		<th width="150">Start Date</th> 
+		<th width="150">End Date </th> 
+		<th width="150">Current Quantity</th> 
+
+		
+</tr> 
+</thead> 
+<tbody> 
+<% @items.each do |item| %>
+<tr> 
+
+<td><img style="width:15px;height:15px;"src="<%= item.item.image_src %>"/></td>
+<td><%= item.item.name %></td>
+
+<td><%= item.item.category %></td>
+<td><%= item.item.supplier_id %></td>
+<td><%= item.item.item_number %></td>
+
+<td><%= item.item.cost_price %></td>
+<td><%= item.item.unit_price%></td>
+<td><%= item.item.promo_price %></td>
+
+<td><%= item.item.start_date %></td>
+<td><%= item.item.end_date %></td>
+<td><%= item.item.quantity %></td>
+</tr>
+<% end %>
+</tbody> 
+</table>
+
+

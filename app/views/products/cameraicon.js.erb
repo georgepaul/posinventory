@@ -1,0 +1,3 @@
+$("#relatedproducts").html("<%= escape_javascript(render partial: 'imagematches', :object => { :googleimage => @googleimage, :posproduct => @posproduct, :products_by_like => @products_by_like, :products_by_item_number => @products_by_item_number, :products_by_search => @products_by_search }) %>");
+$('#relatedpositems').foundation('reveal', 'open');
+loading(false);

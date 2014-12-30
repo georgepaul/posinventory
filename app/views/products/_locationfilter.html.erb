@@ -1,0 +1,6 @@
+<select id="poslocation">
+<option value="all">POS Locations</option>
+<% @locations.each do |m| %>
+<option value="<%= m %>"><%= m %></option>
+<%end%>
+</select>

@@ -1,0 +1,18 @@
+<%= will_paginate @image, :previous_label => "", :next_label => "" %>
+<h1><%= @image[0].name %></h1>
+<h5>Current Image</h5>
+<img style='width:100px;height:100px;border:#ccc 1px solid;padding:2px;' src="<%= @image[0].image_src %>" />
+<br>
+
+<form method="post" action="/posadmin/save_image" style="border:#ccc 1px solid;padding:10px;width:300px;">
+	<input type="hidden" name="item_id" value="<%= @image[0].item_id %>" />
+<input type="text" name="image_src" />
+<input type="hidden" name="page" value="<%=params[:page]%>" />
+
+<input type="submit" value="Update Image Url"/>
+</form>
+
+<h5>New Images</h5>
+<%= @potential_images.each do | image |%>
+<img style='width:200px;height:200px;border:#ccc 1px solid;padding:2px;' src="<%= image %>" />
+<%end%>

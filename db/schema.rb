@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203164135) do
+ActiveRecord::Schema.define(version: 20141209174231) do
+
+  create_table "adult_dvd_marketplaces", force: true do |t|
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "inventories", force: true do |t|
     t.integer  "product_id"
@@ -26,7 +32,7 @@ ActiveRecord::Schema.define(version: 20141203164135) do
     t.string   "body_html"
     t.string   "vendor"
     t.string   "manufacturer"
-    t.string   "type_b"
+    t.string   "type"
     t.string   "sub_type"
     t.string   "category_3"
     t.string   "tags"
@@ -87,11 +93,6 @@ ActiveRecord::Schema.define(version: 20141203164135) do
     t.string   "dvd_genres"
     t.string   "other"
     t.string   "cast"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "productsd", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

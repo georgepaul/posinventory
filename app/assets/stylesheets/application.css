@@ -16,23 +16,104 @@
 
  *= require select2
  *= require select2-bootstrap
- /*= require foundation */
- */
+ *= require foundation */
+*/
+
 .navbar{
 	z-index:1000;
 }
-.main_images{
-	width:150px;
-	height:150px;
+.navmenuitem{
+color: #FFF;
+font-weight: bold;
+float: left;
+cursor: pointer;
+padding: 18px;
+border-right: 1px solid #CCC;
 }
+
+.image_wrapper:hover .cameraicon{
+	display:block;
+}
+
+.cameraicon{
+	display:none;
+position: absolute;
+width: 140px;
+height: 120px;
+
+background: url("http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/3d-transparent-glass-icons-people-things/059432-3d-transparent-glass-icon-people-things-camera.png") no-repeat scroll 0px center / 140px auto transparent;
+top: 5px;
+left: 5px;
+}
+
+.navmenuitem:hover{
+color: #000;
+font-weight: bold;
+float: left;
+cursor: pointer;
+padding: 18px;
+border-right: 1px solid #CCC;
+background:#fff;
+}
+.navmenuitem.selected{
+color: #000;
+font-weight: bold;
+float: left;
+cursor: pointer;
+padding: 18px;
+border-right: 1px solid #CCC;
+background:#fff;
+}
+
+.loading{
+width: 80px;
+margin-left: auto;
+margin-right: auto;
+height: 80px;
+}
+
+.image_wrapper table td,.image_wrapper table tr{
+  font-size:10px;
+}
+.image_wrapper table td{
+border-radius: 6px;
+background: #000;
+color: #FFF;
+font-weight: bold;
+font-size: 15px;
+padding: 0px;
+text-align: center;
+}
+
+.image_wrapper table tr, table tr:nth-of-type(2n){
+	background:black;
+}
+
+
 .image_wrapper
 {
 	position:relative;
 	float:left;
-	margin-left:15px;
+height:600px;
 		margin-bottom:15px;
 		cursor:pointer;
+width:350px;
+		position: relative;
+float: left;
+margin-left: 15px;
+margin-bottom: 15px;
+cursor: pointer;
 }
+
+button.stocktoggle{
+	color:#fff;
+}
+
+.button{
+	color:#fff;
+	font-weight:bold;
+}
+
 .image_wrapper span{
 	display:block;
 }
@@ -47,10 +128,11 @@
 	color:#fff;
 	top:2x;
 	left:5px;
-	font-size:12;
 	font-weight:bold;
 	position:relative;
-	
+	font-size: 12px;
+	text-align: center;
+	padding-top: 12px;
 }
 .image_wrapper .store
 {	
@@ -75,7 +157,6 @@
 .image_wrapper .inventory
 {	
 	position:relative;
-	
 	color:#fff;
 	left:5px;
 	font-size:8px;
@@ -105,7 +186,8 @@ body{
 	min-width:180px;
 }
 
-.pagination a {color:#fff;font-weight:bold;font-size:10px;margin-top:9px;}
+
+.pagination a {color:#000;font-weight:bold;font-size:12px;margin-top:9px;}
 
 .pagination .current{
 	color:green;
@@ -117,6 +199,10 @@ body{
 	font-weight:bold;
 }
 
+.current{
+	font-size:8px;
+}
+
 .button_wrapper{
 	position:absolute;
 	top:15px;
@@ -125,8 +211,6 @@ body{
 }
 .button_wrapper button{
 width:100px;
-
-
 }
 
 .image_wrapper:hover .button_wrapper {
@@ -137,3 +221,22 @@ display:block;
 	margin:0;
 	margin-bottom:3px;
 }
+
+.main_images{
+margin-bottom: 25px;
+border: #ccc 1px solid;
+width:350px;
+height:350px;
+}
+
+
+.image_wrapper table{
+border: medium none;
+position: relative;
+left: 2px;
+top: -30px;
+width: 350px;
+border-spacing: 4px;
+background: #777;
+}
+

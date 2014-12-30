@@ -2,37 +2,39 @@
 <html>
 <head>
   <title>Masterdb</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-      <%= javascript_include_tag "vendor/modernizr" %>
-
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+
+
+	
 <div style="background: none repeat scroll 0% 0% rgb(0, 0, 0); width: 100%; height: 60px; position: fixed; top: 0px;" class="navbar">
-
+  <div class="navmenuitem positemsonly">POS</div>
+  <div class="navmenuitem ordering">Ordering</div>
+  <div class="navmenuitem outofstock" id="outofstock">Out of Stock</div>
+<div id="loading" style="margin-top:10px;display:none;" class="loading"><%= image_tag "ajax.gif" %></div>
 <div class="filter_wrapper" id="filter_wrapper" style="position: absolute; right: 15px; top: 15px;">
-
-
 <span id="manufacturer_filter"><%= render partial: "manufacturerfilter", :object => { :manufacturers => @manufacturers } %></span>
 <span id="category_filter"><%= render partial: "categoryfilter", :object => { :categories => @categories } %></span>
 <span id="subcategory_filter"><%= render partial: "subcategoryfilter", :object => { :sub_categories => @sub_categories } %></span> 
+<span id="posorder_filter"></span>
+<span id="poscategory_filter"></span> 
+<span id="location_filter"></span>
 </div>
 
- <span style="color: rgb(255, 255, 255); font-weight: bold; font-size: 20px; margin-top: 15px; position: absolute; left: 20px; top: 4px;">24HourAdultMart - Find Any SexToy!
 
-
- 	
- </span>
-
-
-
-<div id="paginate" style="left: 20px; position: absolute; top: 38px;">
+<div id="paginate" style="position: fixed;padding: 5px;bottom: 5px;right: 0px;background: none repeat scroll 0% 0% rgb(255, 255, 255);opacity: 0.7;">
 	<%= render partial: "paginate", :object => @products %>  
 </div>
-
 </div>
+
+
+
+
 <%= yield %>
 </body>
 </html>

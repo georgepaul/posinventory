@@ -1,5 +1,6 @@
-$("#products").html("<%= escape_javascript(render partial: 'products', collection: @products ) %>");
+$("#products").html("<%= escape_javascript(render partial: 'products', :object => @products ) %>");
 $("#paginate").html("<%= escape_javascript(render partial: 'paginate', :object => @products) %>");
 $("#products").fadeTo( "slow" , 1);
 $(".filter_wrapper").fadeTo("slow", 1);
+loading(false);
 

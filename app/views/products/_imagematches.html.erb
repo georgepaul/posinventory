@@ -1,0 +1,111 @@
+<div style="overscroll-y:scoll;height:450px;">
+<table style="overscroll-y:scoll;">
+<tr>
+<th colspan="7">Choose a Primary Image - <%= @posproduct.name %> | <%= @posproduct.item_number %></th>
+</tr>
+<tr>
+<th colspan="2"><button type="button" class="update_image" data-src="text" data-item-id="<%= @posproduct.item_id %>" >Update</button></th>
+<th colspan="5"><input type="text" id="imgsrc" name="src" placeholder="URL"/><input type="hidden" name="item-id" </th>
+</tr>
+
+<tr>
+<th colspan="7"> External Searches</th>
+</tr>
+<tr>
+<td colspan="3">
+	<a target="_blank" href="https://www.google.ca/search?q=<%=URI.encode @posproduct.name%>&client=ubuntu&hs=aoG&channel=fs&source=lnms&tbm=isch"><button class="tiny">More Images Google</button></a>
+</td>
+<td colspan="4">
+	<a target="_blank" href="http://www.adultdvdmarketplace.com/xcart/adult_dvd/dvd_search.php?type=title&search=<%=URI.encode @posproduct.name%>"><button class="tiny">More Images AdultDVDMarketPlace</button></a>
+</td>
+
+
+</tr>
+
+<tr><th colspan="7"> First Image From Google </th></tr>
+
+<tr>
+<td colspan="7">
+<a href="<%= @googleimage %>" target="_blank">
+<img class="replacementimage" src="<%= @googleimage %>" />
+<hr>
+<input type="radio" class="update_image" data-src="<%=  @googleimage %>" data-item-id="<%= @posproduct.item_id %>" data-item-number="<%=@posproduct.item_number%>" name="main_image" />
+
+</a>
+
+</td>
+
+</tr>
+
+<% @products_by_like.each do | product | %>
+<tr>
+	<td colspan="7"><%= product.title %></td>
+</tr>
+
+<tr>
+<td><a href="<%= product.thumbnail %>" target="_blank"><img class="replacementimage" src="<%= product.thumbnail %>"/></a>
+<hr>
+<input type="radio" class="update_image" data-src="<%= product.thumbnail %>" data-item-id="<%= @posproduct.item_id %>" data-item-number="<%=@posproduct.item_number%>" name="main_image" />
+</td>
+
+
+
+<td><a href="<%= product.image_src %>" target="_blank"><img class="replacementimage" src="<%= product.image_src %>"/></a>
+	<hr>
+
+	<input type="radio" class="update_image" data-src="<%= product.image_src %>" data-item-id="<%= @posproduct.item_id %>" name="main_image" /></td>
+<td><a href="<%= product.image_2  %>" target="_blank"><img class="replacementimage" src="<%= product.image_2 %>"/></a><hr>
+
+	<input type="radio" class="update_image" data-src="<%= product.image_2 %>" data-item-id="<%= @posproduct.item_id %>" name="main_image" /></td>
+<td><a href="<%= product.image_3 %>" target="_blank"><img class="replacementimage" src="<%= product.image_3 %>"/></a><hr>
+
+	<input type="radio" class="update_image" data-src="<%= product.image_3 %>" data-item-id="<%= @posproduct.item_id %>" name="main_image" /></td>
+<td><a href="<%= product.image_4 %>" target="_blank"><img class="replacementimage" src="<%= product.image_4 %>"/></a><hr>
+
+	<input type="radio" class="update_image" data-src="<%= product.image_4 %>" data-item-id="<%= @posproduct.item_id %>" name="main_image" /></td>
+<td><%= product.manufacturer %></td>
+
+<td><%= product.type_b %></td>
+</tr>
+
+
+<% end %>
+<% @products_by_search.results.each do | product | %>
+<tr>
+	<td colspan="7"><%= product.title %></td>
+</tr>
+
+<tr>
+<td><a href="<%= product.thumbnail %>" target="_blank"><img class="replacementimage" src="<%= product.thumbnail %>"/></a><hr><input type="radio" data-src="<%= product.thumbnail %>" data-item-id="<%= @posproduct.item_id %>" class="update_image" name="main_image" /></td>
+<td><a href="<%= product.image_src %>" target="_blank"><img class="replacementimage" src="<%= product.image_src %>"/></a><hr><input type="radio" data-src="<%= product.image_src %>" data-item-id="<%= @posproduct.item_id %>" class="update_image" name="main_image" /></td>
+<td><a href="<%= product.image_2  %>" target="_blank"><img class="replacementimage" src="<%= product.image_2 %>"/></a><hr><input type="radio" data-src="<%= product.image_2 %>" data-item-id="<%= @posproduct.item_id %>" class="update_image" name="main_image" /></td>
+<td><a href="<%= product.image_3 %>" target="_blank"><img class="replacementimage" src="<%= product.image_3 %>"/></a><hr><input type="radio" data-src="<%= product.image_3 %>" data-item-id="<%= @posproduct.item_id %>" class="update_image" name="main_image" /></td>
+<td><a href="<%= product.image_4 %>" target="_blank"><img class="replacementimage" src="<%= product.image_4 %>"/></a><hr><input type="radio" data-src="<%= product.image_4 %>" data-item-id="<%= @posproduct.item_id %>" class="update_image" name="main_image" /></td>
+<td><%= product.manufacturer %></td>
+
+<td><%= product.type_b %></td>
+</tr>
+
+
+<% end %>
+<% @products_by_item_number.each do | product | %>
+<tr>
+	<td colspan="7"><%= product.title %></td>
+</tr>
+
+<tr>
+<td><a href="<%= product.thumbnail %>" target="_blank"><img class="replacementimage" src="<%= product.thumbnail %>"/></a><hr><input type="radio" data-src="<%= product.thumbnail %>" data-item-id="<%= @posproduct.item_id %>" class="update_image" name="main_image" /></td>
+<td><a href="<%= product.image_src %>" target="_blank"><img class="replacementimage" src="<%= product.image_src %>"/></a><hr><input type="radio" data-src="<%= product.img_src %>" data-item-id="<%= @posproduct.item_id %>" class="update_image" name="main_image" /></td>
+<td><a href="<%= product.image_2  %>" target="_blank"><img class="replacementimage" src="<%= product.image_2 %>"/></a><hr><input class="update_image" type="radio" data-src="<%= product.image_2 %>" data-item-id="<%= @posproduct.item_id %>" name="main_image" /></td>
+<td><a href="<%= product.image_3 %>" target="_blank"><img class="replacementimage" src="<%= product.image_3 %>"/></a><hr><input class="update_image" type="radio" data-src="<%= product.image_3 %>" data-item-id="<%= @posproduct.item_id %>" name="main_image" /></td>
+<td><a href="<%= product.image_4 %>" target="_blank"><img class="replacementimage" src="<%= product.image_4 %>"/></a><hr><input class="update_image" type="radio" data-src="<%= product.image_4 %>" data-item-id="<%= @posproduct.item_id %>" name="main_image" /></td>
+<td><%= product.manufacturer %></td>
+
+<td><%= product.type_b %></td>
+</tr>
+
+
+<% end %>
+</table>
+
+</div>

@@ -1,0 +1,32 @@
+$("#products").html("<%= escape_javascript(render partial: 'posproducts', :object => @products ) %>");
+$("#paginate").html("<%= escape_javascript(render partial: 'paginate', :object => @products) %>");
+$(".filter_wrapper").fadeTo("slow", 1);
+$("#category_filter").hide();
+$("#manufacturer_filter").hide();
+$("#subcategory_filter").hide();
+$("#location_filter").show();
+$("#location_filter").html("<%= escape_javascript(render partial: 'locationfilter', :object => @locations) %>");
+
+$("#poscategory_filter").show();
+$("#poscategory_filter").html("<%= escape_javascript(render partial: 'poscategoryfilter', :object => @pos_categories) %>");
+
+$("#posorder_filter").show();
+$("#posorder_filter").html("<%= escape_javascript(render partial: 'posorder_filter') %>");
+
+
+$("select").select2();
+
+<% if params[:filter] == "outofstock" %>
+$(".outofstock").addClass("selected");
+$(".positemsonly").removeClass("selected");
+
+<% else %>
+$(".positemsonly").addClass("selected");
+$(".outofstock").removeClass("selected");
+
+<% end %>
+
+$(".ordering").removeClass("selected");
+
+
+loading(false);

@@ -1,0 +1,33 @@
+<h2><%= @product.title %></h2><a href="#" class="button alert tiny">Order ($<%= @product.variant_price  %>)</a>
+
+<div class="clear"></div>
+<br>
+<h4>Related POS Items</h4>
+<table> 
+	<thead> 
+	<tr> 
+		<th width="200">Order</th> 
+		<th width="200">Name</th> 
+		<th>Category</th> 
+		<th width="150">Cost Price</th> 
+		<th width="150">Unit Price</th> 
+		<th width="150">Promo Price</th> 
+		<th width="150">Quantity</th> 
+		<th width="150">Re Order Level</th> 
+		</tr>
+	 </thead>
+<tbody> 
+<% @relatedproducts.results.each do | product | %>
+	<tr> 
+			<td><a href="#" class="button tiny">Order</a></td> 
+			<td><%= product.name %></td> 
+	  		<td><%= product.category %></td> 
+	  		<td><%= product.cost_price %></td> 
+	  		<td><%= product.unit_price %></td> 
+	  		<td><%= product.promo_price %></td> 
+	  		<td><%= product.quantity %></td> 
+	  		<td><%= product.reorder_level %></td> 
+	  	</tr> 
+<% end %>
+</tbody> 
+</table>
