@@ -27,7 +27,7 @@ body{
 	z-index:1000;
 }
 .navmenuitem{
-color: #FFF;
+color: #000;
 font-weight: bold;
 float: left;
 cursor: pointer;
