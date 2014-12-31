@@ -329,6 +329,22 @@ $(document.body).on("click",".pos",function(){
 		});
 	loading();
 });
+
+
+ $(function() {
+$( "#products" ).sortable();
+$( "#products" ).disableSelection();
+});
+
+
+
+
+
+
+
+
+
+
 });
 $(function(){ $(document).foundation(); });
 

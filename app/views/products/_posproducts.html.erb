@@ -1,9 +1,15 @@
 <% @products.each do |product| %>
-<div class="image_wrapper hastip"  data-item-id="<%=product.item_id%>"  title="<%=product.name%>">
+<li class="ui-state-default image_wrapper hastip"  data-item-id="<%=product.item_id%>"  title="<%=product.name%>">
 
 <div style="color:#000;text-align:center;margin-bottom:50px;font-weight:bold;" class="cameraicon" data-item-id="<%=product.item_id%>"  data-title="<%= product.name %>" data-item-number="<%=product.item_number%>"></div>
 
+
+<% if product.image_src.nil?%>
+<span style="height: 350px; border: 1px solid grey; font-weight: bold; text-align: center; background: none repeat scroll 0% 0% rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 38px; margin-bottom: 25px; padding-top: 105px; line-height: 50px;"><%= product.name %></span>
+
+<%else%>
 <%= image_tag product.image_src , :class => "main_images", :id => product.item_id %>
+<%end%>
 <span style="color:#000;text-align:center;margin-bottom:50px;font-weight:bold;"><%= product.name %></span>
 
 
@@ -29,7 +35,7 @@
 
 </table>
 
-</div>
+</li>
 <% end %>
 
 
