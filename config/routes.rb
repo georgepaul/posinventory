@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/manufacturer' => 'products#manufacturer', as: 'manufacturer'
   post '/posinfo' => 'products#posinfo', as: 'posinfo'
   post '/positemsonly' => 'products#positemsonly', as: 'positemsonly'
+  post '/posorder' => 'products#posorder', as: 'posorder'
 
   post '/poslocation' => 'products#poslocation', as: 'poslocation'
   post '/itemsales' => 'products#item_sales', as: 'itemsales'

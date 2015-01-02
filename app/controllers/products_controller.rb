@@ -108,8 +108,69 @@ def location
   
 end
 
+def posorder
+
+  replaced = params[:replaced].to_i
+  wall_id = params[:wall_id].to_i 
+  previous = params[:previous].to_i
+
+#If no previous , previous = next - 1
+
+  # Find The New Wall ID 
+ # (previous .. replaced) Loop Through Ids between replaced and previous . Find One available make it the wall ID. Have the Wall ID, Update just that record, 
+@newidcheck = true 
+while !@newidcheck.blank?
+  r = rand()
+  newWallRecord = nil 
+  @newWallId = rand(previous ... replaced) 
+  @newWallId = r + @newWallId
+  @newidcheck = PhpposItems.where(["wall = ?", @newWallId])
+  logger.warn(@newWallId)
+end
+
+
+        @moved = PhpposItems.where("item_id = " + params[:item_id])
+        @moved[0].wall = @newWallId 
+        @moved[0].save
+   
+
+ 
+
+   # PhpposItems.where(["wall = ?",])
+
+=begin
+  if params[:replaced].to_i < params[:wall_id].to_i 
+    logger.warn("UPDATE A")
+    @moved = PhpposItems.where(["wall = ?", params[:wall_id]])
+    logger.warn(@moved.size)
+    logger.warn(@moved[0].item_id)
+    PhpposItems.update_all(["wall = wall + 1 WHERE wall > ? AND wall < ? ", params[:replaced].to_i - 1, params[:wall_id] ])
+ 
+    logger.warn(@moved.inspect)
+    @moved[0].wall = params[:replaced].to_i
+    @moved[0].save
+else
+  logger.warn("UPDATE B")
+  PhpposItems.update_all(["wall = wall + 1 WHERE wall > ? ", params[:replaced]] )
+  PhpposItems.update_all(["wall = wall - 1 WHERE wall < ? ", params[:replaced]] )
+  @moved = PhpposItems.where(["wall = ?", params[:wall_id]])
+  logger.warn(@moved)
+  @moved[0].wall = params[:replaced].to_i
+  @moved[0].save
+ end
+=end
+
+respond_to do |format|
+    format.html 
+    format.js
+    format.json
+  end
+
+end
+
+
 def poscategory
-  orderby = params[:orderby].blank? || params[:orderby] == "all" ? "quantity" : params[:orderby] 
+  orderby = "wall ASC"
   if params[:poscategory] == "all"
     @products = PhpposItems.paginate(:page => params[:page], :per_page => 30).order(orderby)
    else
@@ -238,7 +299,7 @@ def positemsonly
   if params[:filter] == "outofstock"
     @products = PhpposItems.where("quantity < reorder_level").paginate(:page => params[:page], :per_page => 30).order("reorder_level DESC")
   else 
-    @products = PhpposItems.paginate(:page => params[:page], :per_page => 30).order("quantity DESC")
+    @products = PhpposItems.paginate(:page => params[:page], :per_page => 30).order("wall ASC")
   end 
 
   @locations = PhpposItems.uniq.pluck(:location)
