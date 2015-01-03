@@ -1,0 +1,25 @@
+console.log("POS JS");
+console.log("#wall_<%= params[:wall_id].gsub('.',"_") %>");
+
+console.log("<%= @newWallId %>");
+$("#wall_<%= params[:wall_id].gsub('.',"_") %>").attr("data-wall-id",<%= @newWallId %>);
+/*
+$(".image_wrapper").each(function(index,element)
+{
+	wallId = parseInt($(this).attr("data-wall-id"));
+//	console.log("DDDDDEEEEFFF");
+//	console.log(<%= params[:replaced] %>);
+	if(wallId > parseInt(<%= params[:replaced] %>))
+	{
+		console.log("YEP");
+		newWallId = wallId + 1;
+		$(this).attr("data-wall-id", newWallId);
+		if (newWallId == parseInt( <%=params[:wall_id]%> ) ) {
+			console.log("BREAK");
+			console.log(newWallId);
+			return false;
+		}	
+	}
+}
+);
+*/
