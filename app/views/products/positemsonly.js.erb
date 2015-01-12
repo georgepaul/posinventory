@@ -13,20 +13,17 @@ $("#poscategory_filter").html("<%= escape_javascript(render partial: 'poscategor
 $("#posorder_filter").show();
 $("#posorder_filter").html("<%= escape_javascript(render partial: 'posorder_filter') %>");
 
-
+$("#placeholder").html( '<%= params["orderby"] %>' );
 $("select").select2();
 
 <% if params[:filter] == "outofstock" %>
 $(".outofstock").addClass("selected");
 $(".positemsonly").removeClass("selected");
-
 <% else %>
 $(".positemsonly").addClass("selected");
 $(".outofstock").removeClass("selected");
-
 <% end %>
 
 $(".ordering").removeClass("selected");
-
 
 loading(false);

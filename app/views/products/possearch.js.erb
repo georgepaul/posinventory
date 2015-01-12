@@ -1,4 +1,3 @@
-//$("#products").html("j");
 $("#products").html("<%= escape_javascript(render partial: 'posproducts', :object => @products ) %>");
 $("#products").fadeTo( "slow" , 1);
 $("#paginate").html("<%= escape_javascript(render partial: 'paginate', :object => @products) %>");

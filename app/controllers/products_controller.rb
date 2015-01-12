@@ -53,39 +53,23 @@ respond_to do |format|
 end
 
 def cameraicon
-
 queryparts = params[:query].split(" ");
 newword = []
 queryparts.each do |qp|
 newword.push(qp) unless qp =~ /\d/ 
 end
-
 params[:query] = newword.join(" ")
-
 @googleimages = []
-
 @posproduct = PhpposItems.where(["item_id = ?",params[:item_id]])[0];
 suckr = ImageSuckr::GoogleSuckr.new
-
-logger.warn("Google Image")
 @googleimage = suckr.get_image_url({"q" => @posproduct.name}) 
-logger.warn(@googleimage)
-
 @products_by_item_number = Product.where(["phppos_item_item_number = ?",params[:item_number]])
 @products_by_search = Product.search do
   fulltext params[:query]
   paginate :page => params[:page], :per_page => 30
 end
-
 @products_by_like = Product.where(["title LIKE ?","%"+params[:query]+"%"])
-
-logger.warn(@products_by_item_number.inspect)
-logger.warn(@products_by_search.inspect)
-logger.warn(@products_by_like.inspect)
-
-
-
- respond_to do |format|
+respond_to do |format|
     format.html 
     format.js
     format.json
@@ -299,7 +283,7 @@ def positemsonly
   if params[:filter] == "outofstock"
     @products = PhpposItems.where("quantity < reorder_level").paginate(:page => params[:page], :per_page => 30).order("reorder_level DESC")
   else 
-    @products = PhpposItems.paginate(:page => params[:page], :per_page => 30).order("wall ASC")
+    @products = PhpposItems.paginate(:page => params[:page], :per_page => 30).order(params[:orderby])
   end 
 
   @locations = PhpposItems.uniq.pluck(:location)
