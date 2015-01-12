@@ -1,21 +1,13 @@
 <% @products.each do |product| %>
 <li class="ui-state-default image_wrapper hastip" id="wall_<%=product.wall.gsub('.','_')%>" data-wall-id="<%=product.wall%>" data-item-id="<%=product.item_id%>"  title="<%=product.name%>">
-
 <div style="color:#000;text-align:center;margin-bottom:50px;font-weight:bold;" class="cameraicon" data-item-id="<%=product.item_id%>"  data-title="<%= product.name %>" data-item-number="<%=product.item_number%>"></div>
-
-
 <% if product.image_src.nil?%>
 <span style="height: 350px; border: 1px solid grey; font-weight: bold; text-align: center; background: none repeat scroll 0% 0% rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 38px; margin-bottom: 25px; padding-top: 105px; line-height: 50px;"><%= product.name %></span>
 <%else%>
 <%= image_tag product.image_src , :class => "main_images", :id => product.item_id %>
 <%end%>
 <span style="color:#000;text-align:center;margin-bottom:50px;font-weight:bold;"><%= product.name %></span>
-
-
 <table style="height:120px;">
-
-
-
 <tr style="background:#777;height:70px;">
 	<td>stk/bstk <br> <span style="font-size:12px;">
 		<%=product.stock %> | <%=product.backstock %>
@@ -24,16 +16,13 @@
 		<td>Mk%<br><%= (product.unit_price / product.cost_price).round(3) %></td>
 	<td>#sold <br><%= product.sales %></td>
 </tr>
-
-<tr style="background:#777;">
+<tr style="background:#777;height:70px;">
 	<td title="<%= product.last_order(false).strftime('%A %e %Y') unless product.last_order == 'NA' || product.last_order.blank? %>">L order <br><%= product.last_order  %></td>
 		<td>min r <br><%= product.reorder_level %></td>
 		<td title="<%= product.last_sale(false).strftime('%A %e %Y') unless product.last_sale == 'NA' || product.last_sale.blank? %>">l sold <br><%= product.last_sale%></td>
 	<td>dst <br><%= product.distributor_name %></td>
 </tr>
-
 </table>
-
 </li>
 <% end %>
 
