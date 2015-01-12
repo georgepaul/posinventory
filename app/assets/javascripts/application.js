@@ -95,7 +95,10 @@ dataType: 'script'
 loading();
 });
 $(".fixed_search").keyup(function(){
-if($("#exampleCheckboxSwitch4").val() == "off")
+
+alert($(".positemsonly").hasClass("selected"));
+
+if($(".positemsonly").hasClass("selected"))
 {
 $.ajax({
 type: "POST",
@@ -105,7 +108,9 @@ dataType: 'script'
 });
 loading();
 }
-else if ($("#exampleCheckboxSwitch4").val() == "on")
+
+
+else if ($(".ordering").hasClass("selected"))
 {
 $.ajax({
 type: "POST",
@@ -115,6 +120,8 @@ dataType: 'script'
 });
 loading();
 }
+
+
 else{
 $.ajax({
 type: "POST",
@@ -124,7 +131,16 @@ dataType: 'script'
 });
 loading();
 }
+
+
+
 });
+
+
+
+
+
+
 $(".ordering").click(function(){
 $.ajax({
 type: "POST",
